@@ -1,5 +1,4 @@
 /* Ravi Ranjan · portfolio. Plain CSS, dark by default, light on request or by system setting. */
-@property --ang { syntax: "<angle>"; inherits: false; initial-value: 0deg; }
 
 :root {
   --bg: #07090f;
@@ -162,7 +161,7 @@ svg.fill { fill: currentColor; stroke: none; }
 .eyebrow .num { color: var(--brand); }
 .eyebrow::after { content: ""; width: 56px; height: 1px; background: linear-gradient(90deg, var(--brand), transparent); transform: scaleX(0); transform-origin: left; transition: transform 1s var(--ease) .3s; }
 .in-view .eyebrow::after, .eyebrow.in-view::after { transform: scaleX(1); }
-.sec-head h2, .contact-card h2 { font-size: clamp(32px, 4.6vw, 52px); font-weight: 800; }
+.sec-head h2 { font-size: clamp(32px, 4.6vw, 52px); font-weight: 800; }
 
 /* spotlight cards: a soft glow follows the pointer */
 .spot { position: relative; isolation: isolate; }
@@ -229,24 +228,19 @@ a.work-item:hover .work-media img { transform: scale(1.03); }
 .live-dot { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; color: var(--ok); border: 1px solid color-mix(in srgb, var(--ok) 40%, var(--line)); background: color-mix(in srgb, var(--ok) 8%, transparent); }
 
 /* contact */
-.contact-card { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 44px; align-items: center; padding: 56px; border-radius: 30px; border: 1px solid transparent; box-shadow: var(--shadow);
-  background:
-    radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--brand) 20%, transparent), transparent 55%) padding-box,
-    radial-gradient(circle at 100% 100%, color-mix(in srgb, var(--brand-2) 20%, transparent), transparent 55%) padding-box,
-    linear-gradient(var(--surface), var(--surface)) padding-box,
-    conic-gradient(from var(--ang), var(--line-2) 0 50%, var(--brand) 68%, var(--brand-2) 80%, var(--line-2) 95%) border-box;
-  animation: border-spin 7s linear infinite; }
-@keyframes border-spin { to { --ang: 360deg; } }
-.contact-card .sec-head { margin-bottom: 0; }
-.contact-card .lead { margin: 18px 0 28px; }
-.mail-row { display: flex; flex-wrap: wrap; gap: 12px; }
-.copy span { font-weight: 500; }
-.contact-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
-.contact-links a { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--line); color: var(--text); font-weight: 700; transition: opacity .5s, translate .5s var(--ease), transform .3s var(--ease), border-color .2s; }
-.contact-links a:hover { text-decoration: none; transform: translateX(6px); border-color: var(--brand); }
-.contact-links small { margin-left: auto; color: var(--muted); font-weight: 500; font-size: 13px; }
-.contact-links .arr { color: var(--brand); transition: transform .3s var(--ease); }
-.contact-links a:hover .arr { transform: translate(2px, -2px); }
+.contact { border-top: 1px solid var(--line); }
+.contact-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 72px; align-items: start; }
+.contact .sec-head { margin-bottom: 0; }
+.contact .lead { margin: 20px 0 30px; max-width: 440px; font-size: 17px; }
+.contact-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line-2); }
+.contact-list li { display: grid; grid-template-columns: 120px minmax(0, 1fr) 40px; align-items: center; gap: 16px; min-height: 72px; padding: 14px 0; border-bottom: 1px solid var(--line); transition: opacity .5s, translate .5s var(--ease), border-color .3s; }
+.contact-list li:hover { border-bottom-color: var(--line-2); }
+.c-label { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.c-value { color: var(--text); font-size: 17px; font-weight: 500; overflow-wrap: anywhere; transition: color .2s; }
+a.c-value:hover { color: var(--brand); text-decoration: none; }
+.c-action { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 10px; border: 1px solid var(--line); background: transparent; color: var(--text-2); cursor: pointer; transition: color .2s, border-color .2s, background-color .2s, transform .3s var(--ease); }
+.c-action svg { width: 17px; height: 17px; }
+.c-action:hover { color: var(--text); border-color: var(--brand); background: var(--surface); transform: translateY(-2px); }
 
 /* footer */
 .footer { position: relative; border-top: 1px solid var(--line); background: var(--bg-alt); padding: 80px 0 0; color: var(--muted); font-size: 14px; overflow: hidden; }
@@ -313,11 +307,11 @@ a.work-item:hover .work-media img { transform: scale(1.03); }
 
 /* responsive */
 @media (max-width: 960px) {
-  .hero-inner, .about-grid, .work-item.has-media, .contact-card { grid-template-columns: minmax(0, 1fr); }
+  .hero-inner, .about-grid, .work-item.has-media, .contact-grid { grid-template-columns: minmax(0, 1fr); }
   .work-item.has-media { gap: 28px; }
   .hero-visual { order: -1; margin: 30px 0 18px; }
   .hero-photo { width: min(270px, 64vw); }
-  .contact-card { padding: 36px; }
+  .contact-grid { gap: 40px; }
   .scroll-hint { display: none; }
   .f-cta { grid-template-columns: minmax(0, 1fr); gap: 28px; }
   .f-main { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -342,8 +336,8 @@ a.work-item:hover .work-media img { transform: scale(1.03); }
   .skill-groups { grid-template-columns: minmax(0, 1fr); }
   .section { padding: 84px 0; }
   .orbit { inset: -20px; }
-  .contact-card { padding: 26px; border-radius: 24px; }
-  .copy span { overflow-wrap: anywhere; }
+  .contact-list li { grid-template-columns: minmax(0, 1fr) 40px; gap: 6px 12px; }
+  .c-label { grid-column: 1 / -1; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
