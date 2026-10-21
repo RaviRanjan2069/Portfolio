@@ -90,6 +90,8 @@ svg.fill { fill: currentColor; stroke: none; }
 /* underline that slides to the hovered or current link; the side borders inset it to the text width */
 .nav-pill { position: absolute; z-index: 0; bottom: 1px; left: 0; width: 0; height: 2px; box-sizing: border-box; border-inline: 14px solid transparent; background: var(--text); background-clip: padding-box; opacity: 0; transition: left .4s var(--ease), width .4s var(--ease), opacity .25s; }
 .nav-actions { justify-self: end; display: flex; align-items: center; gap: 10px; }
+.nav-resume { padding: 8px 12px; border-radius: 10px; color: var(--text-2); font-size: 14px; font-weight: 600; transition: color .2s, background-color .2s; }
+.nav-resume:hover { color: var(--text); background: var(--surface); text-decoration: none; }
 .nav-cta { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 10px; background: var(--text); color: var(--bg); font-size: 14px; font-weight: 600; transition: opacity .2s; }
 .nav-cta svg { width: 16px; height: 16px; transition: transform .3s var(--ease); }
 .nav-cta:hover { text-decoration: none; opacity: .9; }
@@ -310,6 +312,7 @@ a.c-value:hover { color: var(--brand); text-decoration: none; }
 @media (max-width: 560px) {
   .info-row { grid-template-columns: minmax(0, 1fr); gap: 8px; }
   .brand-role, .nav-cta { display: none; }
+  .nav-resume { padding: 8px 10px; }
   .footer { padding-top: 48px; }
   .f-main { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; padding: 0 0 40px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; }
