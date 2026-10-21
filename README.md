@@ -15,5 +15,6 @@ Double-click `index.html`. Skill icons (skillicons.dev) and fonts (Google Fonts)
 
 ## Live site
 
-https://raviranjan2069.github.io/Portfolio/ (GitHub Pages, from the `main` branch of this repository).
-Push changes to `main` and the site updates within a minute or two.
+**https://ravi-ranjan-portfolio.vercel.app** (Vercel)
+
+Also on GitHub Pages: https://raviranjan2069.github.io/Portfolio/ (from the `main` branch; updates a minute or two after a push).
