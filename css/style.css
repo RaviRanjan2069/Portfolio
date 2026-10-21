@@ -140,12 +140,6 @@ svg.fill { fill: currentColor; stroke: none; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .orbit { position: absolute; inset: -34px; border-radius: 50%; border: 1px dashed var(--line-2); animation: spin 40s linear infinite reverse; }
 .orbit::before { content: ""; position: absolute; top: 50%; left: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 14px var(--brand); }
-.float-chip { position: absolute; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: color-mix(in srgb, var(--surface) 88%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid var(--line-2); box-shadow: var(--shadow); font-size: 13px; font-weight: 600; color: var(--text); white-space: nowrap; transform: translateZ(60px); animation: bob 5s ease-in-out infinite; }
-.float-chip svg { width: 16px; height: 16px; color: var(--brand); }
-.chip-a { top: 4%; left: -16%; }
-.chip-b { bottom: 16%; right: -18%; animation-delay: -1.6s; }
-.chip-c { bottom: -3%; left: 2%; animation-delay: -3.2s; }
-@keyframes bob { 50% { translate: 0 -10px; } }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 60%, transparent); animation: ping 1.8s infinite; flex: none; }
 @keyframes ping { 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
 .scroll-hint { position: absolute; left: 50%; bottom: 28px; translate: -50% 0; display: grid; justify-items: center; gap: 8px; color: var(--muted); font: 500 11px/1 var(--mono); letter-spacing: .2em; text-transform: uppercase; }
@@ -361,7 +355,6 @@ svg.fill { fill: currentColor; stroke: none; }
   .project-media { order: -1; }
   .hero-visual { order: -1; margin: 30px 0 18px; }
   .hero-photo { width: min(270px, 64vw); }
-  .chip-a { left: -10%; } .chip-b { right: -12%; }
   .contact-card { padding: 36px; }
   .scroll-hint { display: none; }
   .f-cta { grid-template-columns: minmax(0, 1fr); gap: 28px; }
@@ -388,7 +381,6 @@ svg.fill { fill: currentColor; stroke: none; }
   .section { padding: 84px 0; }
   .project { padding: 18px; border-radius: 22px; }
   .project h3 { font-size: 28px; }
-  .float-chip { font-size: 12px; padding: 6px 11px; }
   .orbit { inset: -20px; }
   .contact-card { padding: 26px; border-radius: 24px; }
   .copy span { overflow-wrap: anywhere; }
