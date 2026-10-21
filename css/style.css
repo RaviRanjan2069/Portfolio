@@ -59,7 +59,8 @@ svg.fill { fill: currentColor; stroke: none; }
 
 /* intro curtain: pure CSS, so it always leaves even without JavaScript */
 .intro { position: fixed; inset: 0; z-index: 100; display: grid; place-content: center; justify-items: center; gap: 18px; background: var(--bg); pointer-events: none; animation: curtain .7s var(--ease) .95s forwards; }
-.intro-mark { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 18px; background: var(--grad); color: #fff; font-weight: 800; font-size: 22px; letter-spacing: .02em; animation: pop .6s var(--ease) both; }
+/* the portrait, zoomed in on the face, inside a gradient ring */
+.intro-mark { width: 76px; height: 76px; border-radius: 50%; border: 3px solid transparent; background: url("../assets/ravi.jpg") 50% 22% / 175% no-repeat padding-box, var(--grad) border-box; box-shadow: 0 0 0 4px var(--bg), 0 0 40px -6px color-mix(in srgb, var(--brand) 70%, transparent); animation: pop .6s var(--ease) both; }
 .intro-bar { width: 120px; height: 2px; border-radius: 2px; background: var(--line); overflow: hidden; }
 .intro-bar::after { content: ""; display: block; height: 100%; background: var(--grad); transform: scaleX(0); transform-origin: left; animation: fillbar .8s var(--ease) .1s forwards; }
 @keyframes curtain { to { clip-path: inset(0 0 100% 0); visibility: hidden; } }
