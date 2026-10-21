@@ -73,19 +73,27 @@ svg.fill { fill: currentColor; stroke: none; }
 /* nav */
 .nav { position: sticky; top: 0; z-index: 50; transition: background-color .3s, border-color .3s; border-bottom: 1px solid transparent; }
 .nav.scrolled { background: color-mix(in srgb, var(--bg) 78%, transparent); backdrop-filter: blur(14px) saturate(1.4); -webkit-backdrop-filter: blur(14px) saturate(1.4); border-color: var(--line); }
-.nav-inner { width: min(1140px, 100% - 40px); margin-inline: auto; height: 72px; display: flex; align-items: center; gap: 24px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); font-weight: 700; letter-spacing: -.01em; }
+.nav-inner { width: min(1140px, 100% - 40px); margin-inline: auto; height: 72px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; }
+.brand { justify-self: start; display: inline-flex; align-items: center; gap: 12px; color: var(--text); }
 .brand:hover { text-decoration: none; }
-.brand-mark { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 10px; background: var(--grad); color: #fff; font-size: 14px; font-weight: 800; transition: transform .5s var(--ease); }
-.brand:hover .brand-mark { transform: rotate(-8deg) scale(1.06); }
-.links { position: relative; margin-left: auto; display: flex; gap: 2px; padding: 4px; border-radius: 999px; border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 70%, transparent); }
-.links a { position: relative; z-index: 1; color: var(--text-2); padding: 7px 15px; border-radius: 999px; font-size: 14.5px; font-weight: 500; transition: color .25s; }
+.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: var(--text); color: var(--bg); font-size: 13px; font-weight: 800; letter-spacing: .02em; transition: transform .5s var(--ease); }
+.brand-text { display: grid; line-height: 1.2; }
+.brand-name { font-size: 15px; font-weight: 700; letter-spacing: -.01em; }
+.brand-role { font: 500 11px/1.4 var(--mono); letter-spacing: .04em; color: var(--muted); }
+.brand:hover .brand-mark { transform: rotate(-6deg); }
+.links { position: relative; display: flex; gap: 4px; }
+.links a { position: relative; z-index: 1; color: var(--text-2); padding: 8px 14px; font-size: 14.5px; font-weight: 500; transition: color .25s; }
 .links a:hover { color: var(--text); text-decoration: none; }
 .links a.active { color: var(--text); }
-.nav-pill { position: absolute; z-index: 0; top: 4px; bottom: 4px; left: 0; width: 0; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--line-2); opacity: 0; transition: left .4s var(--ease), width .4s var(--ease), opacity .25s; }
-.nav-actions { display: flex; gap: 6px; }
-.icon-btn { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--text); cursor: pointer; transition: border-color .2s, translate .3s var(--ease); }
-.icon-btn:hover { border-color: var(--brand); }
+/* underline that slides to the hovered or current link; the side borders inset it to the text width */
+.nav-pill { position: absolute; z-index: 0; bottom: 1px; left: 0; width: 0; height: 2px; box-sizing: border-box; border-inline: 14px solid transparent; background: var(--text); background-clip: padding-box; opacity: 0; transition: left .4s var(--ease), width .4s var(--ease), opacity .25s; }
+.nav-actions { justify-self: end; display: flex; align-items: center; gap: 10px; }
+.nav-cta { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 10px; background: var(--text); color: var(--bg); font-size: 14px; font-weight: 600; transition: opacity .2s; }
+.nav-cta svg { width: 16px; height: 16px; transition: transform .3s var(--ease); }
+.nav-cta:hover { text-decoration: none; opacity: .9; }
+.nav-cta:hover svg { transform: translateX(3px); }
+.icon-btn { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px; border: 1px solid transparent; background: transparent; color: var(--text-2); cursor: pointer; transition: color .2s, border-color .2s, background-color .2s; }
+.icon-btn:hover { color: var(--text); border-color: var(--line); background: var(--surface); }
 .theme-toggle svg { transition: transform .5s var(--ease); }
 .theme-toggle:hover svg { transform: rotate(40deg); }
 .theme-toggle .i-moon { display: none; }
@@ -319,6 +327,7 @@ a.c-value:hover { color: var(--brand); text-decoration: none; }
 }
 @media (max-width: 560px) {
   .info-row { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .brand-role, .nav-cta { display: none; }
   .footer { padding-top: 64px; }
   .f-main { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 24px; padding: 48px 0; }
   .f-message { flex-direction: column; }
@@ -332,7 +341,7 @@ a.c-value:hover { color: var(--brand); text-decoration: none; }
   .links.open { transform: none; }
   .links a { padding: 14px 8px; border-bottom: 1px solid var(--line); border-radius: 0; font-size: 16px; }
   .nav-pill { display: none; }
-  .nav-actions { margin-left: auto; }
+  .nav-inner { grid-template-columns: 1fr auto; }
   .skill-groups { grid-template-columns: minmax(0, 1fr); }
   .section { padding: 84px 0; }
   .orbit { inset: -20px; }
