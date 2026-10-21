@@ -180,6 +180,7 @@ svg.fill { fill: currentColor; stroke: none; }
 .about-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; align-items: start; }
 .about-text p { margin: 0 0 18px; font-size: 17.5px; color: var(--text-2); }
 .about-text strong { color: var(--text); font-weight: 600; }
+.sub-title { margin: 34px 0 18px; font: 500 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .facts li { display: flex; gap: 14px; align-items: center; padding: 14px 16px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); transition: opacity .5s, translate .5s var(--ease), transform .3s var(--ease), border-color .3s; }
 .facts li:hover { transform: translateX(6px); border-color: color-mix(in srgb, var(--brand) 45%, var(--line)); }
