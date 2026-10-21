@@ -163,7 +163,6 @@ svg.fill { fill: currentColor; stroke: none; }
 .eyebrow::after { content: ""; width: 56px; height: 1px; background: linear-gradient(90deg, var(--brand), transparent); transform: scaleX(0); transform-origin: left; transition: transform 1s var(--ease) .3s; }
 .in-view .eyebrow::after, .eyebrow.in-view::after { transform: scaleX(1); }
 .sec-head h2, .contact-card h2 { font-size: clamp(32px, 4.6vw, 52px); font-weight: 800; }
-.sec-sub { margin: 0; color: var(--text-2); font-size: 17px; max-width: 560px; }
 
 /* spotlight cards: a soft glow follows the pointer */
 .spot { position: relative; isolation: isolate; }
