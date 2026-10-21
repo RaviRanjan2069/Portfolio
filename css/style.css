@@ -77,6 +77,9 @@ svg.fill { fill: currentColor; stroke: none; }
 .brand { justify-self: start; display: inline-flex; align-items: center; gap: 12px; color: var(--text); }
 .brand:hover { text-decoration: none; }
 .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: var(--text); color: var(--bg); font-size: 13px; font-weight: 800; letter-spacing: .02em; transition: transform .5s var(--ease); }
+/* zoomed in on the face of the portrait */
+.brand-photo { width: 36px; height: 36px; border-radius: 50%; background: url("../assets/ravi.jpg") 50% 22% / 175% no-repeat; box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--line-2); transition: box-shadow .3s; }
+.brand:hover .brand-photo { box-shadow: 0 0 0 2px var(--bg), 0 0 0 3px var(--brand); }
 .brand-text { display: grid; line-height: 1.2; }
 .brand-name { font-size: 15px; font-weight: 700; letter-spacing: -.01em; }
 .brand-role { font: 500 11px/1.4 var(--mono); letter-spacing: .04em; color: var(--muted); }
