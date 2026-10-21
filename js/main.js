@@ -1,4 +1,4 @@
-// Ravi Ranjan · portfolio: theme, menu, typing role, split headings, scroll reveal, counters,
+// Ravi Ranjan · portfolio: theme, menu, typing role, split headings, scroll reveal,
 // nav pill, pointer effects (spotlight, tilt, magnetic), hero parallax, copy email.
 (function () {
   "use strict";
@@ -101,25 +101,10 @@
     step();
   };
 
-  // counters
-  const count = (el) => {
-    const to = Number(el.dataset.count);
-    const suffix = el.dataset.suffix || "";
-    if (reduced) { el.textContent = to + suffix; return; }
-    const t0 = performance.now();
-    const step = (t) => {
-      const k = Math.min(1, (t - t0) / 1600);
-      el.textContent = Math.round(to * (1 - (1 - k) ** 4)) + (k === 1 ? suffix : "");
-      if (k < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
-
   // scroll reveal (everything shows at once if the browser lacks IntersectionObserver)
   const revealed = document.querySelectorAll(".reveal, [data-split]");
   const show = (el) => {
     el.classList.add("in-view");
-    el.querySelectorAll("[data-count]").forEach(count);
     if (!reduced) el.querySelectorAll(".eyebrow .label").forEach(scramble);
   };
   if ("IntersectionObserver" in window) {

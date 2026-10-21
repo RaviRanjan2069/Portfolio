@@ -189,13 +189,6 @@ svg.fill { fill: currentColor; stroke: none; }
 .f-ico { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; background: color-mix(in srgb, var(--brand) 12%, var(--surface-2)); color: var(--brand); flex: none; }
 .facts small { display: block; color: var(--muted); font-size: 12.5px; }
 .facts b { font-weight: 600; }
-.stats { margin-top: 56px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.stat { padding: 26px 24px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); overflow: hidden; }
-.stat:hover { border-color: var(--line-2); translate: 0 -4px; }
-.stat b { display: block; font-size: 44px; font-weight: 800; line-height: 1; letter-spacing: -.04em; font-variant-numeric: tabular-nums; color: var(--text); }
-.stat span { display: block; margin-top: 10px; color: var(--text-2); font-size: 14.5px; }
-.stat::before { content: ""; position: absolute; left: 24px; right: 24px; bottom: 0; height: 2px; background: var(--grad); transform: scaleX(0); transform-origin: left; transition: transform 1.2s var(--ease) calc(var(--d, 0s) + .3s); }
-.stat.in-view::before { transform: scaleX(1); }
 
 /* skills */
 .skill-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
@@ -378,7 +371,6 @@ svg.fill { fill: currentColor; stroke: none; }
   .hero-visual { order: -1; margin: 30px 0 18px; }
   .hero-photo { width: min(270px, 64vw); }
   .chip-a { left: -10%; } .chip-b { right: -12%; }
-  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .contact-card { padding: 36px; }
   .scroll-hint { display: none; }
   .f-cta { grid-template-columns: minmax(0, 1fr); gap: 28px; }
@@ -408,14 +400,12 @@ svg.fill { fill: currentColor; stroke: none; }
   .orbit { inset: -20px; }
   .contact-card { padding: 26px; border-radius: 24px; }
   .copy span { overflow-wrap: anywhere; }
-  .stat { padding: 20px 18px; }
-  .stat b { font-size: 36px; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .intro { display: none; }
   .reveal, .wi { opacity: 1; transform: none; }
   .stagger > * { opacity: 1; translate: 0 0; }
-  .timeline::before, .stat::before, .eyebrow::after { transform: none; }
+  .timeline::before, .eyebrow::after { transform: none; }
   html { scroll-behavior: auto; }
 }
