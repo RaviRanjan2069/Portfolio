@@ -72,6 +72,11 @@
             <a class="btn primary" href="#projects">See my projects</a>
             <a class="btn ghost" href="assets/Ravi-Ranjan-Resume.pdf?v=20261023" target="_blank" rel="noopener">Download résumé</a>
           </div>
+          <dl class="now">
+            <div><dt>Studying</dt><dd>B.Tech CSE, Sharda University</dd></div>
+            <div><dt>Building</dt><dd><a href="#projects">Mentora</a>, an AI learning platform</dd></div>
+            <div><dt>Looking for</dt><dd>Internships and freelance work</dd></div>
+          </dl>
         </div>
         <figure class="hero-photo reveal">
           <img src="assets/ravi.jpg" width="460" height="460" alt="Ravi Ranjan" />
@@ -104,10 +109,10 @@
     </section>
 
     <!-- experience -->
-    <section class="section" id="experience">
+    <section class="section alt" id="experience">
       <div class="wrap">
         <h2 class="reveal">Experience</h2>
-        <article class="job reveal">
+        <article class="job timeline reveal">
           <div class="job-head">
             <h3>Frontend Developer Intern <span>· HSR Hi-Tech Solutions</span></h3>
             <p class="job-meta">May 2025 – Jul 2025 · Remote</p>
@@ -125,56 +130,60 @@
     <!-- projects -->
     <section class="section" id="projects">
       <div class="wrap">
-        <h2 class="reveal">Projects</h2>
-        <ol class="work-list">
-          <li class="reveal">
-            <a class="work-item has-media" href="https://mentora-sdlb.onrender.com/app/" target="_blank" rel="noopener">
-              <div class="work-text">
-                <span class="work-num" aria-hidden="true">01</span>
-                <h3>Mentora <span class="tag">Live</span></h3>
-                <p>A learning platform for students and teachers: an AI tutor, adaptive practice, study plans,
-                  progress charts and teacher tools in one web app.</p>
-                <p class="stack">Python · FastAPI · MongoDB · HTML/CSS/JS</p>
-                <span class="more">Open Mentora →</span>
-              </div>
-              <div class="work-media">
-                <img src="assets/mentora-showcase.svg" width="840" height="440" alt="Screens from Mentora: the AI tutor, practice, plans, progress graphs and teacher tools." />
-              </div>
-            </a>
-          </li>
-          <li class="reveal">
-            <a class="work-item" href="https://librisphere-bookstore.vercel.app/" target="_blank" rel="noopener">
-              <span class="work-num" aria-hidden="true">02</span>
-              <h3>LibriSphere <span class="tag">Live</span></h3>
+        <div class="sec-top reveal">
+          <h2>Projects</h2>
+          <p>Things I've built and put online. Click a card to try it.</p>
+        </div>
+        <div class="cards">
+          <a class="card reveal" href="https://mentora-sdlb.onrender.com/app/" target="_blank" rel="noopener">
+            <div class="card-img fit"><img src="assets/mentora-showcase.svg" width="840" height="440" alt="Screens from Mentora: the AI tutor, practice, plans, progress graphs and teacher tools." /></div>
+            <div class="card-body">
+              <p class="card-top"><span class="card-num">01</span><span class="tag">Live</span></p>
+              <h3>Mentora</h3>
+              <p>A learning platform for students and teachers: an AI tutor, adaptive practice, study plans,
+                progress charts and teacher tools in one web app.</p>
+              <p class="stack">Python · FastAPI · MongoDB · HTML/CSS/JS</p>
+              <span class="more">Open Mentora <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+          <a class="card reveal" href="https://librisphere-bookstore.vercel.app/" target="_blank" rel="noopener">
+            <div class="card-img"><img src="assets/librisphere.jpeg" width="1152" height="720" loading="lazy" alt="The LibriSphere home page with featured books and the catalogue." /></div>
+            <div class="card-body">
+              <p class="card-top"><span class="card-num">02</span><span class="tag">Live</span></p>
+              <h3>LibriSphere</h3>
               <p>A multi-vendor bookstore. Sellers manage their own books and orders, buyers shop from many sellers
                 with one cart, and admins approve sellers from a dashboard.</p>
               <p class="stack">Java · Spring Boot · MongoDB · HTML/CSS/JS</p>
-              <span class="more">Open LibriSphere →</span>
-            </a>
-          </li>
-          <li class="reveal">
-            <a class="work-item" href="https://ravi-ranjan-portfolio.vercel.app/">
-              <span class="work-num" aria-hidden="true">03</span>
+              <span class="more">Open LibriSphere <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+          <a class="card reveal" href="https://ravi-ranjan-portfolio.vercel.app/">
+            <div class="card-img"><img src="assets/portfolio.jpeg" width="1152" height="720" loading="lazy" alt="The home section of this portfolio." /></div>
+            <div class="card-body">
+              <p class="card-top"><span class="card-num">03</span></p>
               <h3>Portfolio</h3>
               <p>This site. Written by hand in plain HTML, CSS and JavaScript, with light and dark themes and no frameworks.</p>
               <p class="stack">HTML · CSS · JavaScript · Vercel</p>
-            </a>
-          </li>
-        </ol>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- skills -->
-    <section class="section" id="skills">
+    <section class="section alt" id="skills">
       <div class="wrap">
-        <h2 class="reveal">Skills</h2>
-        <dl class="skills reveal">
-          <div><dt>Languages</dt><dd>Java, Python, JavaScript, TypeScript, SQL</dd></div>
-          <div><dt>Frontend</dt><dd>HTML, CSS, JavaScript, React, Next.js, Tailwind CSS</dd></div>
-          <div><dt>Backend</dt><dd>Spring Boot, Spring Data, FastAPI</dd></div>
-          <div><dt>Databases</dt><dd>MongoDB, MySQL, SQLite</dd></div>
-          <div><dt>Tools</dt><dd>Git, GitHub, VS Code, IntelliJ IDEA, Jupyter Notebook</dd></div>
-        </dl>
+        <div class="sec-top reveal">
+          <h2>Skills</h2>
+          <p>What I use day to day.</p>
+        </div>
+        <div class="skill-rows">
+          <div class="skill-row reveal"><h3>Languages</h3><ul><li><img src="https://skillicons.dev/icons?i=java" width="28" height="28" alt="" loading="lazy" />Java</li><li><img src="https://skillicons.dev/icons?i=py" width="28" height="28" alt="" loading="lazy" />Python</li><li><img src="https://skillicons.dev/icons?i=js" width="28" height="28" alt="" loading="lazy" />JavaScript</li><li><img src="https://skillicons.dev/icons?i=ts" width="28" height="28" alt="" loading="lazy" />TypeScript</li></ul></div>
+          <div class="skill-row reveal"><h3>Frontend</h3><ul><li><img src="https://skillicons.dev/icons?i=html" width="28" height="28" alt="" loading="lazy" />HTML</li><li><img src="https://skillicons.dev/icons?i=css" width="28" height="28" alt="" loading="lazy" />CSS</li><li><img src="https://skillicons.dev/icons?i=react" width="28" height="28" alt="" loading="lazy" />React</li><li><img src="https://skillicons.dev/icons?i=nextjs" width="28" height="28" alt="" loading="lazy" />Next.js</li><li><img src="https://skillicons.dev/icons?i=tailwind" width="28" height="28" alt="" loading="lazy" />Tailwind CSS</li></ul></div>
+          <div class="skill-row reveal"><h3>Backend</h3><ul><li><img src="https://skillicons.dev/icons?i=spring" width="28" height="28" alt="" loading="lazy" />Spring Boot</li><li><img src="https://skillicons.dev/icons?i=fastapi" width="28" height="28" alt="" loading="lazy" />FastAPI</li></ul></div>
+          <div class="skill-row reveal"><h3>Databases</h3><ul><li><img src="https://skillicons.dev/icons?i=mongodb" width="28" height="28" alt="" loading="lazy" />MongoDB</li><li><img src="https://skillicons.dev/icons?i=mysql" width="28" height="28" alt="" loading="lazy" />MySQL</li><li><img src="https://skillicons.dev/icons?i=sqlite" width="28" height="28" alt="" loading="lazy" />SQLite</li></ul></div>
+          <div class="skill-row reveal"><h3>Tools</h3><ul><li><img src="https://skillicons.dev/icons?i=git" width="28" height="28" alt="" loading="lazy" />Git</li><li><img src="https://skillicons.dev/icons?i=github" width="28" height="28" alt="" loading="lazy" />GitHub</li><li><img src="https://skillicons.dev/icons?i=vscode" width="28" height="28" alt="" loading="lazy" />VS Code</li><li><img src="https://skillicons.dev/icons?i=idea" width="28" height="28" alt="" loading="lazy" />IntelliJ IDEA</li></ul></div>
+        </div>
       </div>
     </section>
 
