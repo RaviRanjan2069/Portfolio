@@ -23,6 +23,11 @@
   menuBtn.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
   menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
 
+  // number stagger children so they arrive one after another
+  document.querySelectorAll(".stagger").forEach((list) => {
+    [...list.children].forEach((child, k) => child.style.setProperty("--k", k));
+  });
+
   // scroll reveal (everything shows at once if the browser lacks IntersectionObserver)
   const revealed = document.querySelectorAll(".reveal");
   const show = (el) => el.classList.add("in-view");

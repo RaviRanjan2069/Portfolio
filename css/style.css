@@ -390,3 +390,43 @@ a.c-value:hover { color: var(--brand); text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .hero-photo:hover, .hero-photo.pop, .work-media:hover, .work-media.pop { transform: none; }
 }
+
+/* ---------- animations ---------- */
+/* headings: a short teal line draws in under each section title */
+.sec-head h2, .contact h2 { position: relative; padding-bottom: 14px; }
+.sec-head h2::after, .contact h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 48px; height: 3px; border-radius: 3px; background: var(--brand); transform: scaleX(0); transform-origin: left; transition: transform .8s var(--ease) .25s; }
+.in-view h2::after, .sec-head.in-view h2::after { transform: scaleX(1); }
+
+/* status pill: a softly pulsing teal dot */
+.status { gap: 9px; }
+.status .dot { background: var(--brand); box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand) 55%, transparent); }
+
+/* photo: floats gently; the ring breathes */
+.hero-visual { animation: float 6s ease-in-out infinite; }
+@keyframes float { 50% { translate: 0 -10px; } }
+.ring { animation: breathe 6s ease-in-out infinite; }
+@keyframes breathe { 50% { inset: 0; opacity: .6; } }
+
+/* experience: the accent bar grows down the card */
+.job { position: relative; border-left-color: var(--line); overflow: hidden; }
+.job::before { content: ""; position: absolute; left: -1px; top: 0; bottom: 0; width: 3px; background: var(--brand); transform: scaleY(0); transform-origin: top; transition: transform 1s var(--ease) .2s; }
+.job.in-view::before { transform: scaleY(1); }
+.job, .edu-item, .info-card { transition: opacity .8s ease, transform .9s var(--ease), border-color .3s, box-shadow .3s, translate .3s var(--ease); }
+.job:hover, .edu-item:hover, .info-card:hover { translate: 0 -4px; border-color: color-mix(in srgb, var(--brand) 35%, var(--line)); box-shadow: var(--shadow); }
+
+/* skills: teal line across the top on hover */
+.skill-card::before { display: block; background: var(--brand); }
+.skill-card { transition: opacity .8s ease, transform .9s var(--ease), translate .3s var(--ease), border-color .3s, box-shadow .3s; }
+.skill-card:hover { box-shadow: var(--shadow); }
+
+/* projects: the number turns teal */
+.work-num { transition: color .3s, translate .4s var(--ease); }
+.work-item:hover .work-num { color: var(--brand); }
+
+/* certifications and contact rows slide a little on hover */
+.cert-list li, .contact-list li { transition: opacity .5s, translate .5s var(--ease), padding-left .3s var(--ease), border-color .3s; }
+.cert-list li:hover, .contact-list li:hover { padding-left: 10px; border-bottom-color: var(--brand); }
+.cert-list li:hover b { color: var(--brand); }
+
+/* nav underline in teal */
+.nav-pill { border-color: color-mix(in srgb, var(--brand) 40%, var(--line-2)); }
