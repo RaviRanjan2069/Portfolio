@@ -3,20 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ravi Ranjan · Full-stack developer</title>
-  <meta name="description" content="Ravi Ranjan, B.Tech Computer Science student at Sharda University and full-stack developer. Projects: Mentora and LibriSphere." />
-  <meta name="theme-color" content="#fbfaf7" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#151514" media="(prefers-color-scheme: dark)" />
-  <meta property="og:title" content="Ravi Ranjan · Full-stack developer" />
-  <meta property="og:description" content="Computer Science student at Sharda University building web apps with JavaScript, Java and Python." />
-  <link rel="canonical" href="https://ravi-ranjan-portfolio.vercel.app/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ravi-ranjan-portfolio.vercel.app/" />
-  <meta property="og:image" content="https://ravi-ranjan-portfolio.vercel.app/assets/ravi.jpg" />
-  <meta name="twitter:card" content="summary" />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="icon" type="image/jpeg" sizes="460x460" href="assets/ravi.jpg" />
-  <link rel="apple-touch-icon" href="assets/ravi.jpg" />
+  <title>Ravi Ranjan · Full-stack + AI developer</title>
+  <meta name="description" content="Ravi Ranjan, full-stack and AI developer from Noida, India. Builder of Mentora, an AI learning platform, and LibriSphere, a multi-vendor bookstore." />
+  <meta property="og:title" content="Ravi Ranjan · Full-stack + AI developer" />
+  <meta property="og:description" content="Full-stack web apps and AI-powered tools. Builder of Mentora and LibriSphere." />
+  <meta property="og:image" content="assets/ravi.jpg" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%232f62e8'/%3E%3Ctext x='20' y='27' text-anchor='middle' font-family='Segoe UI,Arial' font-weight='800' font-size='17' fill='white'%3ERR%3C/text%3E%3C/svg%3E" />
   <script>
     // set the theme before paint so the page never flashes
     (function () {
@@ -27,24 +19,22 @@
       } catch (e) { /* storage blocked: follow the system */ }
     })();
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#home"><img src="assets/ravi.jpg" width="32" height="32" alt="" />Ravi Ranjan</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <header class="nav" id="top">
+    <div class="nav-inner">
+      <a class="brand" href="#home" aria-label="Ravi Ranjan, home"><span class="brand-mark">RR</span><span class="brand-name">Ravi Ranjan</span></a>
       <nav class="links" id="menu" aria-label="Sections">
         <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
       <div class="nav-actions">
-        <a class="nav-resume" href="assets/Ravi-Ranjan-Resume.pdf?v=20261023" target="_blank" rel="noopener">Résumé</a>
         <button class="icon-btn theme-toggle" type="button" aria-label="Switch light or dark theme">
           <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
           <svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -57,129 +47,87 @@
   </header>
 
   <main>
-    <!-- intro -->
+    <!-- hero -->
     <section class="hero" id="home">
+      <div class="orb orb-a" aria-hidden="true"></div>
+      <div class="orb orb-b" aria-hidden="true"></div>
+      <div class="grid-bg" aria-hidden="true"></div>
       <div class="wrap hero-inner">
-        <div class="hero-text reveal">
-          <p class="kicker">Full-stack developer · Noida, India</p>
-          <h1>Ravi Ranjan</h1>
-          <p class="lead">
-            I'm a Computer Science student at Sharda University who likes building things people can actually use.
-            Most of my work is in HTML, CSS and JavaScript on the front end, with Java, Python, Spring Boot and FastAPI
-            behind it. I'm currently open to internships.
+        <div class="hero-text">
+          <p class="hello reveal"><span class="wave" aria-hidden="true">👋</span> Hi, I'm</p>
+          <h1 class="reveal" style="--d:.08s">Ravi Ranjan</h1>
+          <p class="role reveal" style="--d:.16s">
+            <span class="role-static">I build</span>
+            <span class="typed" aria-live="polite"></span><span class="caret" aria-hidden="true"></span>
           </p>
-          <div class="cta">
-            <a class="btn primary" href="#projects">See my projects</a>
-            <a class="btn ghost" href="assets/Ravi-Ranjan-Resume.pdf?v=20261023" target="_blank" rel="noopener">Download résumé</a>
+          <p class="lead reveal" style="--d:.24s">
+            Full-stack and AI developer from Noida, India. I turn ideas into working products, from the
+            database and API to the screen people use. Currently building
+            <a href="#projects">Mentora</a>, an AI learning platform for students and their teachers.
+          </p>
+          <div class="cta reveal" style="--d:.32s">
+            <a class="btn primary" href="#projects">View my work
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a class="btn ghost" href="#contact">Get in touch</a>
           </div>
-          <dl class="now">
-            <div><dt>Studying</dt><dd>B.Tech CSE, Sharda University</dd></div>
-            <div><dt>Building</dt><dd><a href="#projects">Mentora</a>, an AI learning platform</dd></div>
-            <div><dt>Looking for</dt><dd>Internships and freelance work</dd></div>
-          </dl>
+          <ul class="socials reveal" style="--d:.4s" aria-label="Profiles">
+            <li><a href="https://github.com/RaviRanjan2069" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+              <svg viewBox="0 0 24 24" class="fill"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/ravi-ranjan-320b56261/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+              <svg viewBox="0 0 24 24" class="fill"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg></a></li>
+            <li><a href="https://leetcode.com/u/Raviranjan2069/" target="_blank" rel="noopener" aria-label="LeetCode" title="LeetCode">
+              <svg viewBox="0 0 24 24" class="fill"><path d="M13.5 0a1.4 1.4 0 0 0-1 .4L6.1 6.9l-.4.5A5.6 5.6 0 0 0 4.6 9a5.7 5.7 0 0 0 .1 2.6l.2.6.6 1.1.6.7 4.4 4.5.7.6c.7.5 1.4.8 2.2.9a5.6 5.6 0 0 0 4.6-1.6l2.6-2.6a1.4 1.4 0 0 0-1.9-1.9l-2.7 2.6a2.9 2.9 0 0 1-4 0l-4.3-4.4a2.7 2.7 0 0 1 0-3.9l3.9-4 2.5-2.7A1.4 1.4 0 0 0 13.5 0zm-2.3 12.6a1.4 1.4 0 1 0 0 2.8h9.4a1.4 1.4 0 1 0 0-2.8z"/></svg></a></li>
+            <li><a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ravirajput2069@gmail.com&amp;su=Hello%20Ravi" target="_blank" rel="noopener" aria-label="Email" title="ravirajput2069@gmail.com">
+              <svg viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></svg></a></li>
+          </ul>
         </div>
-        <figure class="hero-photo reveal">
-          <img src="assets/ravi.jpg" width="460" height="460" alt="Ravi Ranjan" />
-        </figure>
+
+        <div class="hero-photo reveal" style="--d:.2s">
+          <div class="ring" aria-hidden="true"></div>
+          <img src="assets/ravi.jpg" width="320" height="320" alt="Portrait of Ravi Ranjan" />
+          <div class="float-chip chip-a"><span class="dot"></span> Mentora is live</div>
+          <div class="float-chip chip-b"><b>Java</b> · <b>Python</b> · <b>JS</b></div>
+          <div class="float-chip chip-c">🎓 B.Tech CSE</div>
+        </div>
       </div>
+      <a class="scroll-hint" href="#about" aria-label="Scroll to About"><span></span></a>
     </section>
 
     <!-- about -->
     <section class="section" id="about">
-      <div class="wrap two-col">
-        <div class="reveal">
-          <h2>About</h2>
-          <p>
-            I'm from Bihar and studying for my B.Tech in Computer Science and Engineering in Greater Noida. I enjoy the
-            whole process of making a web app: planning the data, writing the API, getting the interface right and
-            putting it online for real people to use.
-          </p>
-          <p>
-            Outside of coursework I've built <a href="#projects">Mentora</a>, a learning platform with an AI tutor, and
-            <a href="#projects">LibriSphere</a>, a bookstore where many sellers share one shop.
-          </p>
-        </div>
-        <dl class="facts reveal">
-          <div><dt>Education</dt><dd>B.Tech, Computer Science &amp; Engineering<span>Sharda University · 2023–2027</span></dd></div>
-          <div><dt>Based in</dt><dd>Noida, India</dd></div>
-          <div><dt>Hometown</dt><dd>Bihar, India</dd></div>
-          <div><dt>Looking for</dt><dd>Internships and freelance work</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- experience -->
-    <section class="section alt" id="experience">
       <div class="wrap">
-        <h2 class="reveal">Experience</h2>
-        <article class="job timeline reveal">
-          <div class="job-head">
-            <h3>Frontend Developer Intern <span>· HSR Hi-Tech Solutions</span></h3>
-            <p class="job-meta">May 2025 – Jul 2025 · Remote</p>
+        <header class="sec-head reveal">
+          <p class="eyebrow">About me</p>
+          <h2>Simple products, built properly</h2>
+        </header>
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <p>
+              I'm a <strong>B.Tech Computer Science and Engineering student at Sharda University</strong> who
+              likes building complete products. I enjoy the whole path: designing the data, writing the API,
+              making the interface clear, testing it, and putting it online.
+            </p>
+            <p>
+              My main project, <strong>Mentora</strong>, brings an AI tutor, adaptive practice, study plans,
+              progress analytics and teacher tools into one web app. Before that I built
+              <strong>LibriSphere</strong>, a multi-vendor bookstore in Java and Spring Boot.
+            </p>
+            <p>
+              I care about clean APIs, tests that catch real bugs, and interfaces that feel simple.
+            </p>
           </div>
-          <p>Worked on the frontend of a restaurant point-of-sale system built with Next.js, React, TypeScript and Tailwind CSS.</p>
-          <ul>
-            <li>Built the ordering screen: a touch-friendly menu with category filters, a live cart and cash, card or digital payment.</li>
-            <li>Built the kitchen dashboard, where order status is colour-coded, and an admin panel for the menu.</li>
-            <li>Connected the screens to Next.js API routes backed by MongoDB, with clear feedback messages for staff.</li>
+          <ul class="facts reveal" style="--d:.1s">
+            <li><span class="f-ico">📍</span><div><small>Based in</small><b>Noida, India</b></div></li>
+            <li><span class="f-ico">🎓</span><div><small>Studying</small><b>B.Tech CSE · Sharda University</b></div></li>
+            <li><span class="f-ico">🚀</span><div><small>Building</small><b>Mentora, an AI learning platform</b></div></li>
+            <li><span class="f-ico">💡</span><div><small>Focus</small><b>Full-stack web apps + AI tools</b></div></li>
           </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- projects -->
-    <section class="section" id="projects">
-      <div class="wrap">
-        <div class="sec-top reveal">
-          <h2>Projects</h2>
-          <p>Things I've built and put online. Click a card to try it.</p>
         </div>
-        <div class="cards">
-          <a class="card featured reveal" href="https://mentora-sdlb.onrender.com/app/" target="_blank" rel="noopener">
-            <div class="card-img fit"><img src="assets/mentora-showcase.svg" width="840" height="440" alt="Screens from Mentora: the AI tutor, practice, plans, progress graphs and teacher tools." /></div>
-            <div class="card-body">
-              <p class="card-top"><span class="card-num">01 · Featured</span><span class="tag">Live</span></p>
-              <h3>Mentora</h3>
-              <p>A learning platform for students and teachers that brings an AI tutor, adaptive practice, study plans,
-                progress charts and teacher tools into one web app.</p>
-              <ul class="card-points">
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>AI tutor that explains concepts step by step</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>10-question practice rounds that adapt to each student</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Class codes, quizzes and per-question analysis for teachers</li>
-              </ul>
-              <p class="stack">Python · FastAPI · MongoDB · HTML/CSS/JS</p>
-              <span class="more">Open Mentora <span aria-hidden="true">→</span></span>
-            </div>
-          </a>
-          <a class="card reveal" href="https://librisphere-bookstore.vercel.app/" target="_blank" rel="noopener">
-            <div class="card-img"><img src="assets/librisphere.jpeg" width="1152" height="720" loading="lazy" alt="The LibriSphere home page with featured books and the catalogue." /></div>
-            <div class="card-body">
-              <p class="card-top"><span class="card-num">02</span><span class="tag">Live</span></p>
-              <h3>LibriSphere</h3>
-              <p>A multi-vendor bookstore where readers buy from many independent sellers with a single cart.</p>
-              <ul class="card-points">
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Sellers manage their own listings, stock and orders</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Order tracking, with cancellation of single items</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Admin dashboard for seller approval and sales</li>
-              </ul>
-              <p class="stack">Java · Spring Boot · MongoDB · HTML/CSS/JS</p>
-              <span class="more">Open LibriSphere <span aria-hidden="true">→</span></span>
-            </div>
-          </a>
-          <a class="card reveal" href="https://ravi-ranjan-portfolio.vercel.app/">
-            <div class="card-img"><img src="assets/portfolio.jpeg" width="1152" height="720" loading="lazy" alt="The home section of this portfolio." /></div>
-            <div class="card-body">
-              <p class="card-top"><span class="card-num">03</span></p>
-              <h3>Portfolio</h3>
-              <p>This site, written by hand without frameworks or a build step.</p>
-              <ul class="card-points">
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Light and dark themes that follow your system</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Responsive from phone to desktop</li>
-                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Hosted on Vercel and GitHub Pages</li>
-              </ul>
-              <p class="stack">HTML · CSS · JavaScript · Vercel</p>
-            </div>
-          </a>
+        <div class="stats">
+          <div class="stat reveal"><b data-count="2">0</b><span>full-stack apps built</span></div>
+          <div class="stat reveal" style="--d:.08s"><b data-count="1300" data-suffix="+">0</b><span>automated tests in Mentora</span></div>
+          <div class="stat reveal" style="--d:.16s"><b data-count="800" data-suffix="+">0</b><span>practice questions in Mentora</span></div>
+          <div class="stat reveal" style="--d:.24s"><b data-count="8">0</b><span>subjects covered</span></div>
         </div>
       </div>
     </section>
@@ -187,109 +135,185 @@
     <!-- skills -->
     <section class="section alt" id="skills">
       <div class="wrap">
-        <div class="sec-top reveal">
-          <h2>Skills</h2>
-          <p>What I use day to day.</p>
+        <header class="sec-head reveal">
+          <p class="eyebrow">Skills</p>
+          <h2>Tech stack</h2>
+        </header>
+        <div class="skill-groups">
+          <article class="skill-card reveal">
+            <h3>Languages</h3>
+            <ul>
+              <li><img src="https://skillicons.dev/icons?i=java" alt="" />Java</li>
+              <li><img src="https://skillicons.dev/icons?i=py" alt="" />Python</li>
+              <li><img src="https://skillicons.dev/icons?i=js" alt="" />JavaScript</li>
+            </ul>
+          </article>
+          <article class="skill-card reveal" style="--d:.08s">
+            <h3>Frontend</h3>
+            <ul>
+              <li><img src="https://skillicons.dev/icons?i=html" alt="" />HTML</li>
+              <li><img src="https://skillicons.dev/icons?i=css" alt="" />CSS</li>
+              <li><img src="https://skillicons.dev/icons?i=js" alt="" />JavaScript</li>
+            </ul>
+          </article>
+          <article class="skill-card reveal" style="--d:.16s">
+            <h3>Backend &amp; Database</h3>
+            <ul>
+              <li><img src="https://skillicons.dev/icons?i=spring" alt="" />Spring Boot</li>
+              <li><img src="https://skillicons.dev/icons?i=fastapi" alt="" />FastAPI</li>
+              <li><img src="https://skillicons.dev/icons?i=mongodb" alt="" />MongoDB</li>
+              <li><img src="https://skillicons.dev/icons?i=mysql" alt="" />MySQL</li>
+            </ul>
+          </article>
+          <article class="skill-card reveal" style="--d:.24s">
+            <h3>DevOps &amp; Tools</h3>
+            <ul>
+              <li><img src="https://skillicons.dev/icons?i=git" alt="" />Git</li>
+              <li><img src="https://skillicons.dev/icons?i=github" alt="" />GitHub</li>
+              <li><img src="https://skillicons.dev/icons?i=githubactions" alt="" />GitHub Actions</li>
+              <li><img src="https://skillicons.dev/icons?i=docker" alt="" />Docker</li>
+              <li><img src="https://skillicons.dev/icons?i=maven" alt="" />Maven</li>
+              <li><img src="https://skillicons.dev/icons?i=vscode" alt="" />VS Code</li>
+            </ul>
+          </article>
         </div>
-        <div class="skill-rows">
-          <div class="skill-row reveal"><h3>Languages</h3><ul><li><img src="https://skillicons.dev/icons?i=java" width="28" height="28" alt="" loading="lazy" />Java</li><li><img src="https://skillicons.dev/icons?i=py" width="28" height="28" alt="" loading="lazy" />Python</li><li><img src="https://skillicons.dev/icons?i=js" width="28" height="28" alt="" loading="lazy" />JavaScript</li><li><img src="https://skillicons.dev/icons?i=ts" width="28" height="28" alt="" loading="lazy" />TypeScript</li></ul></div>
-          <div class="skill-row reveal"><h3>Frontend</h3><ul><li><img src="https://skillicons.dev/icons?i=html" width="28" height="28" alt="" loading="lazy" />HTML</li><li><img src="https://skillicons.dev/icons?i=css" width="28" height="28" alt="" loading="lazy" />CSS</li><li><img src="https://skillicons.dev/icons?i=react" width="28" height="28" alt="" loading="lazy" />React</li><li><img src="https://skillicons.dev/icons?i=nextjs" width="28" height="28" alt="" loading="lazy" />Next.js</li><li><img src="https://skillicons.dev/icons?i=tailwind" width="28" height="28" alt="" loading="lazy" />Tailwind CSS</li></ul></div>
-          <div class="skill-row reveal"><h3>Backend</h3><ul><li><img src="https://skillicons.dev/icons?i=spring" width="28" height="28" alt="" loading="lazy" />Spring Boot</li><li><img src="https://skillicons.dev/icons?i=fastapi" width="28" height="28" alt="" loading="lazy" />FastAPI</li></ul></div>
-          <div class="skill-row reveal"><h3>Databases</h3><ul><li><img src="https://skillicons.dev/icons?i=mongodb" width="28" height="28" alt="" loading="lazy" />MongoDB</li><li><img src="https://skillicons.dev/icons?i=mysql" width="28" height="28" alt="" loading="lazy" />MySQL</li><li><img src="https://skillicons.dev/icons?i=sqlite" width="28" height="28" alt="" loading="lazy" />SQLite</li></ul></div>
-          <div class="skill-row reveal"><h3>Tools</h3><ul><li><img src="https://skillicons.dev/icons?i=git" width="28" height="28" alt="" loading="lazy" />Git</li><li><img src="https://skillicons.dev/icons?i=github" width="28" height="28" alt="" loading="lazy" />GitHub</li><li><img src="https://skillicons.dev/icons?i=vscode" width="28" height="28" alt="" loading="lazy" />VS Code</li><li><img src="https://skillicons.dev/icons?i=idea" width="28" height="28" alt="" loading="lazy" />IntelliJ IDEA</li></ul></div>
+        <div class="marquee reveal" aria-hidden="true">
+          <div class="marquee-track">
+            <span>REST APIs</span><span>Spring Data JPA</span><span>Hibernate</span><span>Thymeleaf</span><span>MongoDB Atlas</span><span>pytest</span><span>CI / CD</span><span>Responsive UI</span><span>Auth &amp; sessions</span><span>LLM integration</span><span>Data visualisation</span><span>Render</span>
+            <span>REST APIs</span><span>Spring Data JPA</span><span>Hibernate</span><span>Thymeleaf</span><span>MongoDB Atlas</span><span>pytest</span><span>CI / CD</span><span>Responsive UI</span><span>Auth &amp; sessions</span><span>LLM integration</span><span>Data visualisation</span><span>Render</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- certifications -->
-    <section class="section" id="certifications">
+    <!-- projects -->
+    <section class="section" id="projects">
       <div class="wrap">
-        <div class="sec-top reveal">
-          <h2>Certifications</h2>
-          <p>Courses and workshops I've completed.</p>
-        </div>
-        <ul class="certs">
-          <li class="cert reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg><div><h3>Web Development: HTML, CSS and JavaScript</h3><p>DataFlair · 2024</p></div></li>
-          <li class="cert reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg><div><h3>Java Foundations</h3><p>Oracle Academy · 2024</p></div></li>
-          <li class="cert reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg><div><h3>React Mastery Workshop</h3><p>GitHub Club Technova, Sharda University · 2025</p></div></li>
-          <li class="cert reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg><div><h3>Sharda University Training Program</h3><p>GeeksforGeeks</p></div></li>
-        </ul>
+        <header class="sec-head reveal">
+          <p class="eyebrow">Projects</p>
+          <h2>Things I've built</h2>
+        </header>
+
+        <article class="project featured reveal">
+          <a class="project-media" href="https://mentora-sdlb.onrender.com/app/" target="_blank" rel="noopener" aria-label="Open the Mentora live demo">
+            <img src="assets/mentora-showcase.svg" alt="Mentora: the AI tutor, adaptive practice, plans, progress graphs and teacher tools, with a small app window showing results and a practice question." />
+          </a>
+          <div class="project-body">
+            <div class="project-top">
+              <span class="tag live"><span class="dot"></span> Live</span>
+              <span class="tag">Featured</span>
+            </div>
+            <h3>Mentora</h3>
+            <p class="project-sub">An AI learning platform for students and their teachers</p>
+            <ul class="features">
+              <li><b>AI tutor</b> that explains step by step, in a full-screen chat</li>
+              <li><b>Adaptive practice</b>: 10-question rounds that get easier or harder and bring back missed topics</li>
+              <li><b>Goals &amp; plans</b>: week-by-week roadmaps that adapt to results</li>
+              <li><b>Progress analytics</b> with line graphs of real results per subject</li>
+              <li><b>Teacher tools</b>: class codes, subject folders, quizzes and per-question analysis</li>
+              <li>Accounts with email verification, password reset and a help desk</li>
+            </ul>
+            <ul class="chips">
+              <li>Python</li><li>FastAPI</li><li>MongoDB Atlas</li><li>HTML/CSS/JS</li><li>GitHub Actions</li><li>Render</li>
+            </ul>
+            <div class="project-links">
+              <a class="btn primary small" href="https://mentora-sdlb.onrender.com/app/" target="_blank" rel="noopener">Live demo
+                <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              <a class="btn ghost small" href="https://github.com/RaviRanjan2069/mentora" target="_blank" rel="noopener">Source code</a>
+            </div>
+            <p class="note">A demo with synthetic starter content; not evaluated with real learners. The free server may take a minute to wake up.</p>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-media libri" aria-hidden="true">
+            <div class="libri-window">
+              <div class="libri-bar"><i></i><i></i><i></i><span>LibriSphere</span></div>
+              <div class="libri-shelf">
+                <div class="book b1"><span>Clean Code</span></div>
+                <div class="book b2"><span>Algorithms</span></div>
+                <div class="book b3"><span>Java 21</span></div>
+                <div class="book b4"><span>Design</span></div>
+              </div>
+              <div class="libri-cart"><span>🛒 Cart</span><b>3 items</b></div>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-top"><span class="tag">Java · Spring Boot</span></div>
+            <h3>LibriSphere</h3>
+            <p class="project-sub">A multi-vendor bookstore e-commerce platform</p>
+            <ul class="features">
+              <li><b>Vendors</b> add and manage their own books</li>
+              <li><b>Buyers</b> browse, add to cart, check out and see their orders</li>
+              <li><b>Admins</b> manage vendors and watch platform activity from a dashboard</li>
+              <li>Sign-up, sign-in and role-based access; responsive pages</li>
+            </ul>
+            <ul class="chips">
+              <li>Java 21</li><li>Spring Boot</li><li>Spring Data JPA</li><li>Hibernate</li><li>Thymeleaf</li><li>H2</li><li>Maven</li>
+            </ul>
+            <div class="project-links">
+              <a class="btn ghost small" href="https://github.com/RaviRanjan2069/LibriSphere" target="_blank" rel="noopener">Source code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- education -->
+    <section class="section alt" id="education">
+      <div class="wrap">
+        <header class="sec-head reveal">
+          <p class="eyebrow">Education</p>
+          <h2>Where I'm learning</h2>
+        </header>
+        <ol class="timeline">
+          <li class="reveal">
+            <span class="t-dot" aria-hidden="true"></span>
+            <div class="t-card">
+              <h3>B.Tech, Computer Science and Engineering</h3>
+              <p class="t-where">Sharda University</p>
+              <p>Data structures and algorithms, databases, operating systems, computer networks and web development,
+                put into practice through full-stack projects like Mentora and LibriSphere.</p>
+            </div>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- contact -->
-    <section class="section alt" id="contact">
-      <div class="wrap two-col">
-        <div class="reveal">
-          <h2>Contact</h2>
-          <p>The easiest way to reach me is email. I'm open to internships and freelance work.</p>
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="contact-card reveal">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Let's build something together</h2>
+            <p class="lead">Open to internships, projects and collaboration. The quickest way to reach me is email.</p>
+            <div class="mail-row">
+              <a class="btn primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ravirajput2069@gmail.com&amp;su=Hello%20Ravi" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 6 9 7 9-7"/></svg>
+                Email me</a>
+              <button class="btn ghost copy" type="button" data-copy="ravirajput2069@gmail.com">
+                <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg>
+                <span>ravirajput2069@gmail.com</span></button>
+            </div>
+          </div>
+          <ul class="contact-links">
+            <li><a href="https://www.linkedin.com/in/ravi-ranjan-320b56261/" target="_blank" rel="noopener"><span>LinkedIn</span><small>ravi-ranjan-320b56261</small></a></li>
+            <li><a href="https://github.com/RaviRanjan2069" target="_blank" rel="noopener"><span>GitHub</span><small>RaviRanjan2069</small></a></li>
+            <li><a href="https://leetcode.com/u/Raviranjan2069/" target="_blank" rel="noopener"><span>LeetCode</span><small>Raviranjan2069</small></a></li>
+          </ul>
         </div>
-        <ul class="contact-list reveal">
-          <li>
-            <span class="c-label">Email</span>
-            <a class="c-value" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ravirajput2069@gmail.com&amp;su=Hello%20Ravi" target="_blank" rel="noopener">ravirajput2069@gmail.com</a>
-            <button class="c-action copy" type="button" data-copy="ravirajput2069@gmail.com">Copy</button>
-          </li>
-          <li>
-            <span class="c-label">Phone</span>
-            <a class="c-value" href="tel:+919875425127">+91 98754 25127</a>
-            <a class="c-action" href="https://wa.me/919875425127" target="_blank" rel="noopener">WhatsApp</a>
-          </li>
-          <li>
-            <span class="c-label">LinkedIn</span>
-            <a class="c-value" href="https://www.linkedin.com/in/ravi-ranjan-320b56261/" target="_blank" rel="noopener">ravi-ranjan-320b56261</a>
-          </li>
-          <li>
-            <span class="c-label">GitHub</span>
-            <a class="c-value" href="https://github.com/RaviRanjan2069" target="_blank" rel="noopener">RaviRanjan2069</a>
-          </li>
-        </ul>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="wrap">
-      <div class="f-main">
-        <nav class="f-col" aria-label="Footer navigation">
-          <h3>Navigate</h3>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#skills">Skills</a>
-          <a href="#certifications">Certifications</a>
-          <a href="#contact">Contact</a>
-          <a href="assets/Ravi-Ranjan-Resume.pdf?v=20261023" target="_blank" rel="noopener">Résumé</a>
-        </nav>
-        <div class="f-col">
-          <h3>Work</h3>
-          <a href="https://mentora-sdlb.onrender.com/app/" target="_blank" rel="noopener">Mentora</a>
-          <a href="https://librisphere-bookstore.vercel.app/" target="_blank" rel="noopener">LibriSphere</a>
-          <a href="https://ravi-ranjan-portfolio.vercel.app/">Portfolio</a>
-        </div>
-        <div class="f-col">
-          <h3>Social</h3>
-          <a href="https://github.com/RaviRanjan2069" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/ravi-ranjan-320b56261/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://leetcode.com/u/Raviranjan2069/" target="_blank" rel="noopener">LeetCode</a>
-          <a href="https://www.instagram.com/ravi.rajput.2003/" target="_blank" rel="noopener">Instagram</a>
-        </div>
-        <div class="f-col">
-          <h3>Contact</h3>
-          <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=ravirajput2069@gmail.com&amp;su=Hello%20Ravi" target="_blank" rel="noopener">Email</a>
-          <a href="https://wa.me/919875425127" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="tel:+919875425127">+91 98754 25127</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>© <span id="year"></span> Ravi Ranjan</p>
-        <p>Noida, India<span class="clock" aria-label="Local time in India"></span></p>
-        <a href="#home">Back to top ↑</a>
-      </div>
+    <div class="wrap footer-inner">
+      <p>© <span id="year"></span> Ravi Ranjan · Built with plain HTML, CSS and JavaScript</p>
+      <a href="#home" class="to-top">Back to top ↑</a>
     </div>
   </footer>
 
-  <a class="to-top" href="#home" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
   <div class="toast" role="status" aria-live="polite"></div>
   <script src="js/main.js"></script>
 </body>

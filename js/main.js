@@ -1,13 +1,14 @@
-// Ravi Ranjan · portfolio: theme toggle, mobile menu, fade-in on scroll, active nav link, back-to-top button, copy email, footer clock.
+// Ravi Ranjan · portfolio: theme, menu, typing role, scroll reveal, counters, active link, copy email.
 (function () {
   "use strict";
   const root = document.documentElement;
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // theme: system by default, remembered when chosen
   document.querySelector(".theme-toggle").addEventListener("click", () => {
     const dark = root.dataset.theme
       ? root.dataset.theme === "dark"
-      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      : !window.matchMedia("(prefers-color-scheme: light)").matches;
     root.dataset.theme = dark ? "light" : "dark";
     try { localStorage.setItem("theme", root.dataset.theme); } catch (e) { /* not saved */ }
   });
@@ -23,31 +24,71 @@
   menuBtn.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
   menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
 
-  // fade sections in as they appear (everything shows at once without IntersectionObserver)
+  // typing role
+  const roles = ["full-stack web apps.", "AI-powered tools.", "clean REST APIs.", "with Java & Spring Boot.", "with Python & FastAPI."];
+  const typed = document.querySelector(".typed");
+  if (reduced) {
+    typed.textContent = roles[0];
+  } else {
+    let r = 0;
+    let i = 0;
+    let deleting = false;
+    const tick = () => {
+      const word = roles[r];
+      i += deleting ? -1 : 1;
+      typed.textContent = word.slice(0, i);
+      let wait = deleting ? 35 : 70;
+      if (!deleting && i === word.length) { deleting = true; wait = 1600; }
+      else if (deleting && i === 0) { deleting = false; r = (r + 1) % roles.length; wait = 350; }
+      setTimeout(tick, wait);
+    };
+    setTimeout(tick, 600);
+  }
+
+  // counters
+  const count = (el) => {
+    const to = Number(el.dataset.count);
+    const suffix = el.dataset.suffix || "";
+    if (reduced) { el.textContent = to + suffix; return; }
+    const t0 = performance.now();
+    const step = (t) => {
+      const k = Math.min(1, (t - t0) / 1400);
+      el.textContent = Math.round(to * (1 - (1 - k) ** 3)) + (k === 1 ? suffix : "");
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+
+  // scroll reveal (everything shows at once if the browser lacks IntersectionObserver)
   const revealed = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
         if (!e.isIntersecting) return;
         e.target.classList.add("in-view");
+        e.target.querySelectorAll("[data-count]").forEach(count);
+        if (e.target.matches("[data-count]")) count(e.target);
         io.unobserve(e.target);
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
     revealed.forEach((el) => io.observe(el));
   } else {
     revealed.forEach((el) => el.classList.add("in-view"));
+    document.querySelectorAll("[data-count]").forEach(count);
   }
 
-  // nav border once scrolled, and the link for the section in view
+  // nav background, progress bar, active section
   const nav = document.querySelector(".nav");
-  const toTop = document.querySelector(".to-top");
+  const bar = document.querySelector(".progress span");
   const links = [...menu.querySelectorAll("a")];
   const sections = links.map((a) => document.querySelector(a.getAttribute("href")));
   const onScroll = () => {
-    nav.classList.toggle("scrolled", window.scrollY > 8);
-    toTop.classList.toggle("show", window.scrollY > window.innerHeight);
+    const y = window.scrollY;
+    nav.classList.toggle("scrolled", y > 10);
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = `${max > 0 ? (y / max) * 100 : 0}%`;
     let current = -1;
-    sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top < window.innerHeight * 0.35) current = i; });
+    sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top < window.innerHeight * 0.4) current = i; });
     links.forEach((a, i) => a.classList.toggle("active", i === current));
   };
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -60,7 +101,7 @@
     toast.textContent = text;
     toast.classList.add("show");
     clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove("show"), 2000);
+    toastTimer = setTimeout(() => toast.classList.remove("show"), 2200);
   };
   document.querySelectorAll("[data-copy]").forEach((btn) => btn.addEventListener("click", async () => {
     try {
@@ -72,13 +113,4 @@
   }));
 
   document.getElementById("year").textContent = new Date().getFullYear();
-
-  // footer: local time in India
-  const clock = document.querySelector(".clock");
-  try {
-    const fmt = new Intl.DateTimeFormat("en-IN", { hour: "numeric", minute: "2-digit", hour12: true, timeZone: "Asia/Kolkata" });
-    const tickClock = () => { clock.textContent = `${fmt.format(new Date())} IST`; };
-    tickClock();
-    setInterval(tickClock, 30000);
-  } catch (e) { /* no time zone support: the clock stays hidden */ }
 })();
