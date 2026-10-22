@@ -1,4 +1,4 @@
-// Ravi Ranjan · portfolio: theme toggle, mobile menu, fade-in on scroll, active nav link, copy email, footer clock.
+// Ravi Ranjan · portfolio: theme toggle, mobile menu, fade-in on scroll, active nav link, back-to-top button, copy email, footer clock.
 (function () {
   "use strict";
   const root = document.documentElement;
@@ -40,10 +40,12 @@
 
   // nav border once scrolled, and the link for the section in view
   const nav = document.querySelector(".nav");
+  const toTop = document.querySelector(".to-top");
   const links = [...menu.querySelectorAll("a")];
   const sections = links.map((a) => document.querySelector(a.getAttribute("href")));
   const onScroll = () => {
     nav.classList.toggle("scrolled", window.scrollY > 8);
+    toTop.classList.toggle("show", window.scrollY > window.innerHeight);
     let current = -1;
     sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top < window.innerHeight * 0.35) current = i; });
     links.forEach((a, i) => a.classList.toggle("active", i === current));

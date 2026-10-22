@@ -135,13 +135,18 @@
           <p>Things I've built and put online. Click a card to try it.</p>
         </div>
         <div class="cards">
-          <a class="card reveal" href="https://mentora-sdlb.onrender.com/app/" target="_blank" rel="noopener">
+          <a class="card featured reveal" href="https://mentora-sdlb.onrender.com/app/" target="_blank" rel="noopener">
             <div class="card-img fit"><img src="assets/mentora-showcase.svg" width="840" height="440" alt="Screens from Mentora: the AI tutor, practice, plans, progress graphs and teacher tools." /></div>
             <div class="card-body">
-              <p class="card-top"><span class="card-num">01</span><span class="tag">Live</span></p>
+              <p class="card-top"><span class="card-num">01 · Featured</span><span class="tag">Live</span></p>
               <h3>Mentora</h3>
-              <p>A learning platform for students and teachers: an AI tutor, adaptive practice, study plans,
-                progress charts and teacher tools in one web app.</p>
+              <p>A learning platform for students and teachers that brings an AI tutor, adaptive practice, study plans,
+                progress charts and teacher tools into one web app.</p>
+              <ul class="card-points">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>AI tutor that explains concepts step by step</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>10-question practice rounds that adapt to each student</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Class codes, quizzes and per-question analysis for teachers</li>
+              </ul>
               <p class="stack">Python · FastAPI · MongoDB · HTML/CSS/JS</p>
               <span class="more">Open Mentora <span aria-hidden="true">→</span></span>
             </div>
@@ -151,8 +156,12 @@
             <div class="card-body">
               <p class="card-top"><span class="card-num">02</span><span class="tag">Live</span></p>
               <h3>LibriSphere</h3>
-              <p>A multi-vendor bookstore. Sellers manage their own books and orders, buyers shop from many sellers
-                with one cart, and admins approve sellers from a dashboard.</p>
+              <p>A multi-vendor bookstore where readers buy from many independent sellers with a single cart.</p>
+              <ul class="card-points">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Sellers manage their own listings, stock and orders</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Order tracking, with cancellation of single items</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Admin dashboard for seller approval and sales</li>
+              </ul>
               <p class="stack">Java · Spring Boot · MongoDB · HTML/CSS/JS</p>
               <span class="more">Open LibriSphere <span aria-hidden="true">→</span></span>
             </div>
@@ -162,7 +171,12 @@
             <div class="card-body">
               <p class="card-top"><span class="card-num">03</span></p>
               <h3>Portfolio</h3>
-              <p>This site. Written by hand in plain HTML, CSS and JavaScript, with light and dark themes and no frameworks.</p>
+              <p>This site, written by hand without frameworks or a build step.</p>
+              <ul class="card-points">
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Light and dark themes that follow your system</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Responsive from phone to desktop</li>
+                <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>Hosted on Vercel and GitHub Pages</li>
+              </ul>
               <p class="stack">HTML · CSS · JavaScript · Vercel</p>
             </div>
           </a>
@@ -187,8 +201,24 @@
       </div>
     </section>
 
+    <!-- certifications -->
+    <section class="section" id="certifications">
+      <div class="wrap">
+        <div class="sec-top reveal">
+          <h2>Certifications</h2>
+          <p>Courses and workshops I've completed.</p>
+        </div>
+        <ul class="certs">
+          <li class="cert reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg><div><h3>Web Development: HTML, CSS and JavaScript</h3><p>DataFlair · 2024</p></div></li>
+          <li class="cert reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg><div><h3>Java Foundations</h3><p>Oracle Academy · 2024</p></div></li>
+          <li class="cert reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg><div><h3>React Mastery Workshop</h3><p>GitHub Club Technova, Sharda University · 2025</p></div></li>
+          <li class="cert reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg><div><h3>Sharda University Training Program</h3><p>GeeksforGeeks</p></div></li>
+        </ul>
+      </div>
+    </section>
+
     <!-- contact -->
-    <section class="section" id="contact">
+    <section class="section alt" id="contact">
       <div class="wrap two-col">
         <div class="reveal">
           <h2>Contact</h2>
@@ -227,6 +257,7 @@
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
+          <a href="#certifications">Certifications</a>
           <a href="#contact">Contact</a>
           <a href="assets/Ravi-Ranjan-Resume.pdf?v=20261023" target="_blank" rel="noopener">Résumé</a>
         </nav>
@@ -258,6 +289,7 @@
     </div>
   </footer>
 
+  <a class="to-top" href="#home" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></a>
   <div class="toast" role="status" aria-live="polite"></div>
   <script src="js/main.js"></script>
 </body>
