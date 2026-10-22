@@ -1,20 +1,20 @@
 /* Ravi Ranjan · portfolio. Plain CSS, dark by default, light on request or by system setting. */
 
 :root {
-  --bg: #07090f;
-  --bg-alt: #0a0d16;
-  --surface: #0f131d;
-  --surface-2: #161b29;
+  --bg: #161616;
+  --bg-alt: #1b1b1b;
+  --surface: #1f1f1f;
+  --surface-2: #272727;
   --line: rgba(255, 255, 255, .08);
-  --line-2: rgba(255, 255, 255, .14);
-  --text: #eef1f7;
-  --text-2: #a9b1c4;
-  --muted: #6f7891;
-  --brand: #6d8cff;
-  --brand-2: #a78bfa;
-  --ok: #34d399;
-  --grad: linear-gradient(120deg, #6d8cff, #a78bfa 55%, #f0abfc);
-  --shadow: 0 30px 60px -30px rgba(0, 0, 0, .8);
+  --line-2: rgba(255, 255, 255, .15);
+  --text: #ececec;
+  --text-2: #b4b4b4;
+  --muted: #828282;
+  --brand: #2bb3a3;
+  --brand-2: #2bb3a3;
+  --ok: #4cc38a;
+  --grad: linear-gradient(var(--brand), var(--brand));
+  --shadow: 0 20px 40px -24px rgba(0, 0, 0, .7);
   --radius: 18px;
   --ease: cubic-bezier(.2, .8, .2, 1);
   --font: "Inter", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
@@ -23,22 +23,22 @@
 }
 @media (prefers-color-scheme: light) {
   :root:not([data-theme="dark"]) {
-    --bg: #fafbfd; --bg-alt: #f2f4f9; --surface: #ffffff; --surface-2: #f3f5fa;
-    --line: rgba(15, 23, 42, .09); --line-2: rgba(15, 23, 42, .16);
-    --text: #0d1324; --text-2: #3d4659; --muted: #6b7386;
-    --brand: #3b5bfd; --brand-2: #7c3aed; --ok: #059669;
-    --grad: linear-gradient(120deg, #3b5bfd, #7c3aed 55%, #c026d3);
-    --shadow: 0 30px 60px -34px rgba(15, 23, 42, .35);
+    --bg: #f6f6f4; --bg-alt: #eeeeeb; --surface: #ffffff; --surface-2: #f1f1ee;
+    --line: rgba(0, 0, 0, .09); --line-2: rgba(0, 0, 0, .16);
+    --text: #1a1a1a; --text-2: #444444; --muted: #737373;
+    --brand: #13867a; --brand-2: #13867a; --ok: #1f8a5a;
+    --grad: linear-gradient(var(--brand), var(--brand));
+    --shadow: 0 20px 40px -26px rgba(0, 0, 0, .25);
     color-scheme: light;
   }
 }
 :root[data-theme="light"] {
-  --bg: #fafbfd; --bg-alt: #f2f4f9; --surface: #ffffff; --surface-2: #f3f5fa;
-  --line: rgba(15, 23, 42, .09); --line-2: rgba(15, 23, 42, .16);
-  --text: #0d1324; --text-2: #3d4659; --muted: #6b7386;
-  --brand: #3b5bfd; --brand-2: #7c3aed; --ok: #059669;
-  --grad: linear-gradient(120deg, #3b5bfd, #7c3aed 55%, #c026d3);
-  --shadow: 0 30px 60px -34px rgba(15, 23, 42, .35);
+  --bg: #f6f6f4; --bg-alt: #eeeeeb; --surface: #ffffff; --surface-2: #f1f1ee;
+  --line: rgba(0, 0, 0, .09); --line-2: rgba(0, 0, 0, .16);
+  --text: #1a1a1a; --text-2: #444444; --muted: #737373;
+  --brand: #13867a; --brand-2: #13867a; --ok: #1f8a5a;
+  --grad: linear-gradient(var(--brand), var(--brand));
+  --shadow: 0 20px 40px -26px rgba(0, 0, 0, .25);
   color-scheme: light;
 }
 
@@ -54,13 +54,12 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 svg.fill { fill: currentColor; stroke: none; }
 .wrap { width: min(1140px, 100% - 40px); margin-inline: auto; }
 :focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 6px; }
-.grad { background: var(--grad); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shine 8s linear infinite; }
-@keyframes shine { to { background-position: 200% 0; } }
+.grad { color: var(--text); }
 
 /* intro curtain: pure CSS, so it always leaves even without JavaScript */
 .intro { position: fixed; inset: 0; z-index: 100; display: grid; place-content: center; justify-items: center; gap: 18px; background: var(--bg); pointer-events: none; animation: curtain .7s var(--ease) .95s forwards; }
 /* the portrait, zoomed in on the face, inside a gradient ring */
-.intro-mark { width: 76px; height: 76px; border-radius: 50%; border: 3px solid transparent; background: url("../assets/ravi.jpg") 50% 22% / 175% no-repeat padding-box, var(--grad) border-box; box-shadow: 0 0 0 4px var(--bg), 0 0 40px -6px color-mix(in srgb, var(--brand) 70%, transparent); animation: pop .6s var(--ease) both; }
+.intro-mark { width: 76px; height: 76px; border-radius: 50%; border: 3px solid transparent; background: url("../assets/ravi.jpg") 50% 22% / 175% no-repeat padding-box, var(--grad) border-box; box-shadow: 0 0 0 4px var(--bg); animation: pop .6s var(--ease) both; }
 .intro-bar { width: 120px; height: 2px; border-radius: 2px; background: var(--line); overflow: hidden; }
 .intro-bar::after { content: ""; display: block; height: 100%; background: var(--grad); transform: scaleX(0); transform-origin: left; animation: fillbar .8s var(--ease) .1s forwards; }
 @keyframes curtain { to { clip-path: inset(0 0 100% 0); visibility: hidden; } }
@@ -114,17 +113,15 @@ svg.fill { fill: currentColor; stroke: none; }
 .btn:hover { text-decoration: none; transform: translateY(-2px); }
 .btn svg { width: 18px; height: 18px; transition: transform .3s var(--ease); }
 .btn:hover svg { transform: translateX(3px); }
-.btn.primary { background: var(--grad); background-size: 160% 100%; color: #fff; box-shadow: 0 10px 30px -12px color-mix(in srgb, var(--brand) 80%, transparent), inset 0 1px 0 rgba(255, 255, 255, .25); }
-.btn.primary::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, .35) 50%, transparent 65%); transform: translateX(-110%); transition: transform .8s var(--ease); }
-.btn.primary:hover::after { transform: translateX(110%); }
-.btn.primary:hover { box-shadow: 0 18px 40px -14px color-mix(in srgb, var(--brand) 90%, transparent), inset 0 1px 0 rgba(255, 255, 255, .25); }
+.btn.primary { background: var(--brand); color: #fff; }
+.btn.primary:hover { background: color-mix(in srgb, var(--brand) 88%, #000); }
 .btn.ghost { background: var(--surface); color: var(--text); border-color: var(--line-2); }
 .btn.ghost:hover { border-color: var(--brand); }
 .btn.small { padding: 9px 16px; font-size: 14px; }
 
 /* hero */
 .hero { --intro: .9s; position: relative; min-height: calc(100vh - 72px); min-height: calc(100svh - 72px); display: grid; align-items: center; padding: 40px 0 100px; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; pointer-events: none; }
+.hero-bg { display: none; }
 .grid-bg { position: absolute; inset: 0; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 10%, transparent 75%); -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 10%, transparent 75%); animation: gridpan 24s linear infinite; }
 @keyframes gridpan { to { background-position: 64px 64px; } }
 .spot-light { position: absolute; inset: 0; background: radial-gradient(560px circle at var(--hx, 70%) var(--hy, 35%), color-mix(in srgb, var(--brand) 13%, transparent), transparent 65%); transition: background .2s; }
@@ -146,10 +143,9 @@ svg.fill { fill: currentColor; stroke: none; }
 .hero-visual { justify-self: center; }
 .hero-photo { position: relative; width: min(340px, 80vw); aspect-ratio: 1; transform-style: preserve-3d; }
 .hero-photo img { position: absolute; inset: 12px; width: calc(100% - 24px); height: calc(100% - 24px); border-radius: 50%; object-fit: cover; border: 5px solid var(--bg); transform: translateZ(20px); }
-.ring { position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 0deg, #6d8cff, #a78bfa, #f0abfc, #6d8cff); animation: spin 9s linear infinite; }
-.ring::after { content: ""; position: absolute; inset: -22px; border-radius: 50%; background: inherit; filter: blur(36px); opacity: .35; z-index: -1; }
+.ring { position: absolute; inset: 4px; border-radius: 50%; border: 2px solid var(--brand); }
 @keyframes spin { to { transform: rotate(360deg); } }
-.orbit { position: absolute; inset: -34px; border-radius: 50%; border: 1px dashed var(--line-2); animation: spin 40s linear infinite reverse; }
+.orbit { display: none; position: absolute; inset: -34px; border-radius: 50%; border: 1px dashed var(--line-2); animation: spin 40s linear infinite reverse; }
 .orbit::before { content: ""; position: absolute; top: 50%; left: -4px; width: 8px; height: 8px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 14px var(--brand); }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 60%, transparent); animation: ping 1.8s infinite; flex: none; }
 @keyframes ping { 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
@@ -178,7 +174,7 @@ svg.fill { fill: currentColor; stroke: none; }
 /* spotlight cards: a soft glow follows the pointer */
 .spot { position: relative; isolation: isolate; }
 .spot::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--brand) 14%, transparent), transparent 60%); opacity: 0; transition: opacity .4s; pointer-events: none; }
-.spot:hover::after { opacity: 1; }
+.spot:hover::after { opacity: 0; }
 
 /* about */
 .about { padding-block: 100px; }
