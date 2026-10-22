@@ -1,4 +1,4 @@
-// Ravi Ranjan · portfolio: theme, menu, fade-in on scroll, nav pill, copy email, footer clock.
+// Ravi Ranjan · portfolio: theme, menu, fade-in on scroll, nav pill, image pop on touch, copy email, footer clock.
 (function () {
   "use strict";
   const root = document.documentElement;
@@ -67,6 +67,12 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll);
   onScroll();
+
+  // touch: images pop up while a finger is on them
+  document.querySelectorAll(".hero-photo, .work-media").forEach((el) => {
+    el.addEventListener("touchstart", () => el.classList.add("pop"), { passive: true });
+    ["touchend", "touchcancel"].forEach((t) => el.addEventListener(t, () => el.classList.remove("pop")));
+  });
 
   // copy email
   const toast = document.querySelector(".toast");

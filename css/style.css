@@ -381,3 +381,12 @@ a.c-value:hover { color: var(--brand); text-decoration: none; }
   .job-head, .cert-list li { flex-direction: column; gap: 4px; }
   .cert-list span { text-align: left; }
 }
+
+/* images pop up under the cursor, or while a finger is on them (.pop is set by main.js on touch) */
+.hero-photo, .work-media { transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+.hero-photo:hover, .hero-photo.pop { transform: scale(1.06); }
+.hero-photo:hover img, .hero-photo.pop img { box-shadow: 0 24px 50px -18px rgba(0, 0, 0, .55); }
+.work-media:hover, .work-media.pop { transform: translateY(-6px) scale(1.03); box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .6); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo:hover, .hero-photo.pop, .work-media:hover, .work-media.pop { transform: none; }
+}
