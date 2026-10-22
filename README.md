@@ -8,10 +8,10 @@ Double-click `index.html`. Skill icons (skillicons.dev) and fonts (Google Fonts)
 
 ## Files
 
-- `index.html`: all the content (intro, about, experience, projects, skills, contact)
-- `css/style.css`: styles and the light and dark themes
-- `js/main.js`: theme switch, mobile menu, fade-in on scroll, copy email, footer clock
-- `assets/`: profile photo, favicon, project screenshots (Mentora, LibriSphere, portfolio) and the résumé PDF
+- `index.html`: all the content (hero, about, skills, projects, education, contact)
+- `css/style.css`: styles, light and dark themes, animations
+- `js/main.js`: theme switch, mobile menu, typing line, heading and scroll reveals, counters, nav pill, pointer effects (spotlight, tilt, magnetic buttons), hero parallax, copy email
+- `assets/`: profile photo and the animated Mentora showcase
 
 ## Live site
 
